@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Durgaprasad Nandika — Branding & Communication Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --ink: #08080d;
+        --ink2: #0f101a;
+        --ink3: #161829;
+        --ink4: #1e2136;
+        --brand: #00aae7;
+        --brand-dim: rgba(0, 170, 231, 0.1);
+        --brand-dim2: rgba(0, 170, 231, 0.2);
+        --line: rgba(255, 255, 255, 0.05);
+        --line2: rgba(255, 255, 255, 0.1);
+        --line3: rgba(255, 255, 255, 0.18);
+        --chalk: #f1f1f7;
+        --chalk2: #a2a4bd;
+        --chalk3: #63668a;
+        --gold: #c9a84c;
+        --gold2: #e8c06a;
+        --gold-dim: rgba(201, 168, 76, 0.12);
+        --serif: "DM Serif Display", serif;
+        --sans: "DM Sans", sans-serif;
+        --mono: "JetBrains Mono", monospace;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--ink);
+        color: var(--chalk);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      /* ── BG GLOWS ── */
+      .ambient-glow-1 {
+        position: absolute;
+        top: 10%;
+        left: -10%;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 170, 231, 0.06) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+      .ambient-glow-2 {
+        position: absolute;
+        top: 45%;
+        right: -10%;
+        width: 45vw;
+        height: 45vw;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(201, 168, 76, 0.04) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem 4rem;
+        border-bottom: 1px solid var(--line);
+        background: rgba(8, 8, 13, 0.75);
+        backdrop-filter: blur(20px);
+      }
+      .nav-logo {
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        color: var(--brand);
+        letter-spacing: 0.15em;
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .nav-logo span {
+        color: var(--chalk3);
+      }
+      .nav-links {
+        display: flex;
+        gap: 3rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 0.85rem;
+        color: var(--chalk2);
+        text-decoration: none;
+        letter-spacing: 0.06em;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--brand);
+      }
+      .nav-cta {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--brand);
+        border: 1px solid var(--brand);
+        padding: 0.5rem 1.2rem;
+        border-radius: 4px;
+        text-decoration: none;
+        letter-spacing: 0.08em;
+        transition: all 0.2s;
+        background: transparent;
+      }
+      .nav-cta:hover {
+        background: var(--brand-dim2);
+        box-shadow: 0 0 15px rgba(0, 170, 231, 0.2);
+      }
+
+      /* ── HERO ── */
+      #hero-section {
+        position: relative;
+        overflow: hidden;
+      }
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        padding: 9rem 4rem 4rem;
+        max-width: 1300px;
+        margin: 0 auto;
+        gap: 5rem;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-mono {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--brand);
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .hero-name {
+        font-family: var(--serif);
+        font-size: clamp(3.5rem, 6vw, 5.5rem);
+        line-height: 1.05;
+        color: var(--chalk);
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.01em;
+      }
+      .hero-name-italic {
+        font-style: italic;
+        color: var(--gold);
+        font-weight: 400;
+      }
+      .hero-desc {
+        font-size: 1.05rem;
+        color: var(--chalk2);
+        line-height: 1.85;
+        max-width: 540px;
+        margin-bottom: 3rem;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 1.25rem;
+      }
+      .btn-brand {
+        display: inline-block;
+        padding: 0.9rem 2.2rem;
+        background: var(--brand);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 0.88rem;
+        letter-spacing: 0.05em;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.25s;
+        box-shadow: 0 4px 14px rgba(0, 170, 231, 0.3);
+      }
+      .btn-brand:hover {
+        background: #1cc2ff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 170, 231, 0.4);
+      }
+      .btn-ghost {
+        display: inline-block;
+        padding: 0.9rem 2.2rem;
+        background: transparent;
+        color: #ffffff;
+        font-size: 0.88rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        border: 1px solid #ffffff;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      .btn-ghost:hover {
+        color: #000000;
+        border-color: var(--chalk);
+        background: #ffffff;
+      }
+
+      /* Identity Card */
+      .hero-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .id-card {
+        background: linear-gradient(145deg, var(--ink2), var(--ink));
+        border: 1px solid var(--line2);
+        border-radius: 20px;
+        padding: 2.75rem;
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+      }
+      .id-card::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: var(--brand-dim);
+        filter: blur(40px);
+        pointer-events: none;
+      }
+      .id-profile-container {
+        position: relative;
+        width: 96px;
+        height: 96px;
+        margin-bottom: 1.5rem;
+      }
+      .id-avatar-frame {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: var(--ink3);
+        border: 2px solid var(--brand);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 20px rgba(0, 170, 231, 0.2);
+      }
+      .id-avatar-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .id-avatar-placeholder {
+        font-family: var(--serif);
+        font-size: 2rem;
+        color: var(--brand);
+        font-style: italic;
+      }
+      .id-status-dot {
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+        width: 14px;
+        height: 14px;
+        background: var(--brand);
+        border: 2.5px solid var(--ink2);
+        border-radius: 50%;
+        box-shadow: 0 0 8px var(--brand);
+      }
+      .id-name {
+        font-family: var(--serif);
+        font-size: 1.6rem;
+        color: var(--chalk);
+        line-height: 1.2;
+        margin-bottom: 0.4rem;
+      }
+      .id-title {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--brand);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 1.75rem;
+      }
+      .id-divider {
+        height: 1px;
+        background: linear-gradient(90deg, var(--line2), transparent);
+        margin-bottom: 1.75rem;
+      }
+      .id-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1.1rem;
+      }
+      .id-row:last-child {
+        margin-bottom: 0;
+      }
+      .id-label {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: var(--chalk3);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding-top: 0.1rem;
+      }
+      .id-value {
+        font-size: 0.88rem;
+        color: var(--chalk);
+        text-align: right;
+        max-width: 200px;
+        line-height: 1.45;
+        font-weight: 500;
+      }
+      .id-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: var(--gold-dim);
+        border: 1px solid rgba(201, 168, 76, 0.25);
+        color: var(--gold);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        padding: 0.35rem 0.8rem;
+        border-radius: 4px;
+        text-transform: uppercase;
+        margin-top: 1.5rem;
+      }
+
+      /* ── DIVIDER ── */
+      .full-divider {
+        border: none;
+        border-top: 1px solid var(--line);
+        margin: 0;
+      }
+
+      /* ── SECTION WRAPPER ── */
+      .wrap {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 7.5rem 4rem;
+        position: relative;
+        z-index: 1;
+      }
+      .wrap-narrow {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 7.5rem 4rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ── SECTION HEAD ── */
+      .s-header {
+        margin-bottom: 4rem;
+      }
+      .s-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--brand);
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .s-title {
+        font-family: var(--serif);
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        color: var(--chalk);
+        line-height: 1.15;
+      }
+      .s-title em {
+        font-style: italic;
+        color: var(--gold);
+        font-weight: 400;
+      }
+
+      /* ── ABOUT ── */
+      .about-layout {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 6rem;
+        align-items: start;
+      }
+      .about-quote {
+        font-family: var(--serif);
+        font-size: 1.4rem;
+        font-style: italic;
+        color: var(--chalk);
+        border-left: 3px solid var(--brand);
+        padding-left: 1.5rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+      .about-body {
+        color: var(--chalk2);
+        font-size: 1rem;
+        line-height: 1.9;
+      }
+      .about-body p + p {
+        margin-top: 1.25rem;
+      }
+      .pillbox {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
+      .pill {
+        display: flex;
+        align-items: center;
+        gap: 1.1rem;
+        background: var(--ink2);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 1rem 1.3rem;
+        transition: all 0.25s;
+        cursor: default;
+      }
+      .pill:hover {
+        border-color: var(--brand-dim2);
+        background: var(--ink3);
+        transform: translateX(4px);
+      }
+      .pill-icon {
+        font-size: 1.2rem;
+        flex-shrink: 0;
+        background: rgba(255, 255, 255, 0.03);
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .pill-text {
+        font-size: 0.95rem;
+        color: var(--chalk2);
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .pill:hover .pill-text {
+        color: var(--chalk);
+      }
+
+      /* ── TOOLS BAND ── */
+      .tools-band {
+        background: linear-gradient(90deg, var(--ink), var(--ink2), var(--ink));
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 3rem 4rem;
+      }
+      .tools-inner {
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+      .tools-heading {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--chalk3);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .tools-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .tool-tag {
+        background: var(--ink3);
+        border: 1px solid var(--line2);
+        color: var(--chalk2);
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        font-weight: 500;
+        padding: 0.65rem 1.4rem;
+        border-radius: 6px;
+        transition: all 0.25s;
+      }
+      .tool-tag:hover {
+        border-color: var(--brand);
+        color: var(--brand);
+        background: var(--brand-dim);
+        transform: translateY(-1px);
+      }
+
+      /* ── JOURNEY ── */
+      .journey-layout {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 2rem;
+        align-items: start;
+      }
+      .journey-years {
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid var(--line);
+      }
+      .year-btn {
+        display: block;
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--chalk3);
+        letter-spacing: 0.05em;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        transition: all 0.25s;
+        text-align: left;
+        width: 100%;
+        border-left: 2px solid transparent;
+        margin-left: -1px;
+      }
+      .year-btn.active,
+      .year-btn:hover {
+        color: var(--brand);
+      }
+      .year-btn.active {
+        border-left-color: var(--brand);
+        background: linear-gradient(90deg, var(--brand-dim), transparent);
+        font-weight: 600;
+      }
+      .journey-content {
+        padding: 1rem 0 1rem 2.5rem;
+        min-height: 260px;
+      }
+      .journey-panel {
+        display: none;
+        animation: fadeIn 0.4s ease forwards;
+      }
+      .journey-panel.active {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .jp-year {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--brand);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+      }
+      .jp-title {
+        font-family: var(--serif);
+        font-size: 1.75rem;
+        color: var(--chalk);
+        margin-bottom: 1rem;
+        line-height: 1.25;
+      }
+      .jp-desc {
+        color: var(--chalk2);
+        font-size: 1.02rem;
+        line-height: 1.9;
+      }
+      .jp-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-top: 1.5rem;
+        background: var(--brand-dim);
+        border: 1px solid rgba(0, 170, 231, 0.25);
+        color: var(--brand);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        padding: 0.35rem 0.8rem;
+        border-radius: 4px;
+        text-transform: uppercase;
+      }
+
+      /* ── COMPETENCIES ── */
+      .comp-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .comp-card {
+        background: var(--ink2);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 2.25rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .comp-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: transparent;
+        transition: background 0.3s;
+      }
+      .comp-card:hover {
+        border-color: var(--line3);
+        transform: translateY(-4px);
+        background: var(--ink3);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      }
+      .comp-card:hover::before {
+        background: var(--brand);
+      }
+      .comp-num {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: var(--chalk3);
+        letter-spacing: 0.12em;
+        margin-bottom: 1.5rem;
+      }
+      .comp-name {
+        font-family: var(--serif);
+        font-size: 1.25rem;
+        color: var(--chalk);
+        margin-bottom: 0.75rem;
+        line-height: 1.35;
+      }
+      .comp-desc {
+        font-size: 0.92rem;
+        color: var(--chalk2);
+        line-height: 1.75;
+      }
+
+      /* ── RECOGNITION ── */
+      .reco-card {
+        background: linear-gradient(180deg, var(--ink2), var(--ink));
+        border: 1px solid rgba(0, 170, 231, 0.2);
+        border-radius: 24px;
+        padding: 5rem 4rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+      }
+      .reco-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 170, 231, 0.08) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .reco-star {
+        font-size: 2.2rem;
+        margin-bottom: 1.25rem;
+        display: block;
+        color: var(--gold);
+      }
+      .reco-title {
+        font-family: var(--serif);
+        font-size: 2.8rem;
+        color: var(--chalk);
+        margin-bottom: 0.85rem;
+        line-height: 1.15;
+      }
+      .reco-title em {
+        font-style: italic;
+        color: var(--gold);
+        font-weight: 400;
+      }
+      .reco-from {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--chalk3);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+      }
+      .reco-desc {
+        color: var(--chalk2);
+        font-size: 1.05rem;
+        max-width: 580px;
+        margin: 0 auto;
+        line-height: 1.85;
+      }
+
+      /* ── CONTACT ── */
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: start;
+      }
+      .contact-tagline {
+        color: var(--chalk2);
+        font-size: 1.05rem;
+        line-height: 1.85;
+        margin-bottom: 2rem;
+      }
+      .contact-items {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .contact-row {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        background: var(--ink2);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem;
+        transition: all 0.25s;
+      }
+      .contact-row:hover {
+        border-color: var(--brand-dim2);
+        background: var(--ink3);
+        transform: scale(1.01);
+      }
+      .contact-ico {
+        width: 42px;
+        height: 42px;
+        border-radius: 8px;
+        background: var(--brand-dim);
+        border: 1px solid rgba(0, 170, 231, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        color: var(--brand);
+      }
+      .contact-lbl {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 500;
+        color: var(--chalk3);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .contact-val {
+        font-size: 0.95rem;
+        color: var(--chalk);
+        font-weight: 600;
+        margin-top: 0.15rem;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 2.5rem 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--ink);
+        position: relative;
+        z-index: 5;
+      }
+      .footer-name {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--chalk3);
+        letter-spacing: 0.12em;
+      }
+      .footer-copy {
+        font-size: 0.82rem;
+        color: var(--chalk3);
+      }
+
+      /* ── REVEAL ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(25px);
+        transition: opacity 0.75s cubic-bezier(0.215, 0.61, 0.355, 1),
+          transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+      .reveal.vis {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1024px) {
+        nav {
+          padding: 1.2rem 2rem;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          padding: 8rem 2rem 4rem;
+          gap: 4rem;
+        }
+        .hero-right {
+          justify-content: flex-start;
+        }
+        .id-card {
+          max-width: 100%;
+        }
+        .wrap,
+        .wrap-narrow {
+          padding: 5rem 2rem;
+        }
+        .about-layout,
+        .contact-layout {
+          grid-template-columns: 1fr;
+          gap: 3.5rem;
+        }
+        .comp-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .journey-layout {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        .journey-years {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0.4rem;
+          border-left: none;
+          border-bottom: 1px solid var(--line);
+          padding-bottom: 1.25rem;
+        }
+        .year-btn {
+          border-left: none;
+          padding: 0.5rem 1rem;
+          border: 1px solid var(--line);
+          border-radius: 6px;
+          width: auto;
+          margin-left: 0;
+        }
+        .year-btn.active {
+          border-color: var(--brand);
+          background: var(--brand-dim);
+        }
+        .journey-content {
+          padding-left: 0;
+          min-height: auto;
+        }
+        .tools-band {
+          padding: 3rem 2rem;
+        }
+      }
+      @media (max-width: 680px) {
+        .nav-links {
+          display: none;
+        }
+        .comp-grid {
+          grid-template-columns: 1fr;
+        }
+        .reco-card {
+          padding: 3.5rem 2rem;
+        }
+        footer {
+          flex-direction: column;
+          gap: 0.75rem;
+          text-align: center;
+          padding: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- NAV -->
+    <nav>
+      <a class="nav-logo" href="#hero-section">Durgaprasad</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+     <a class="nav-cta"
+        href="https://www.linkedin.com/in/your-linkedin-username/"
+        target="_blank"
+        onclick="return confirm('Thank you for your interest! Would you like to connect with me on LinkedIn?');">
+        Connect on LinkedIn
+        </a>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero-section">
+      <div class="hero">
+        <div class="hero-left">
+          <div class="hero-mono">Branding &amp; Communication Specialist</div>
+          <h1 class="hero-name">
+            Durgaprasad<br />
+            <span class="hero-name-italic">Nandika</span>
+          </h1>
+          <p class="hero-desc">
+            I transform complex ideas into impactful brand experiences — through
+            deliberate, executive-level communication, purposeful enterprise
+            design, and highly coordinated corporate events.
+          </p>
+          <div class="hero-btns">
+            <a href="#skills" class="btn-brand">Explore Competencies</a>
+            <a href="assets/Durgaprasad_Nandika.pdf" target="_blank" class="btn-ghost">
+              View Resume
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="id-card">
+            <!-- Profile Image Container -->
+            <div class="id-profile-container">
+              <div class="id-avatar-frame">
+                <img
+                  src="./assets/profile-pic.jpg"
+                  alt="Durgaprasad Nandika"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                />
+                <div class="id-avatar-placeholder" style="display: none">
+                  DN
+                </div>
+              </div>
+              <div class="id-status-dot"></div>
+            </div>
+
+            <div class="id-name">Durgaprasad Nandika</div>
+            <div class="id-title">Branding &amp; Communication Executive</div>
+            <div class="id-divider"></div>
+            <div class="id-row">
+              <span class="id-label">Corporate Org</span>
+              <span class="id-value">Miracle Software Systems</span>
+            </div>
+            <div class="id-row">
+              <span class="id-label">Tenure</span>
+              <span class="id-value">2+ Years Active</span>
+            </div>
+            <div class="id-row">
+              <span class="id-label">Focus Areas</span>
+              <span class="id-value"
+                >Corporate Identity · Engagement · Enterprise Media</span
+              >
+            </div>
+            <div class="id-row">
+              <span class="id-label">Ecosystem</span>
+              <span class="id-value"
+                >MS 365 · Canva · Inkscape · Zoho Suite</span
+              >
+            </div>
+            <div class="id-badge">★ Star Performer 2024</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="full-divider" />
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap">
+        <div class="s-header reveal">
+          <div class="s-eyebrow">Executive Summary</div>
+          <h2 class="s-title">
+            The architecture behind<br />the <em>identity</em>
+          </h2>
+        </div>
+        <div class="about-layout">
+          <div class="reveal">
+            <p class="about-quote">
+              "Fusing design standard systems, structural storytelling, and
+              brand strategy into a coherent voice."
+            </p>
+            <div class="about-body">
+              <p>
+                Operating as a Branding &amp; Communication Executive at Miracle
+                Software Systems, I steer how our ecosystem presents its core
+                capacities, aligns internally, and registers across
+                cross-platform channels.
+              </p>
+              <p>
+                My methodology connects strategic visual design with modern
+                corporate narrative structures. Whether architecting high-stakes
+                corporate slide decks, managing large-scale organizational
+                summits, or deploying brand governance templates, I establish
+                clean consistency across touchpoints.
+              </p>
+              <p>
+                I focus on engineering high-retention corporate messaging that
+                drives audience engagement and bridges organizational objectives
+                with crisp execution.
+              </p>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="pillbox">
+              <div class="pill">
+                <span class="pill-icon">🎨</span
+                ><span class="pill-text">Enterprise Presentation Design</span>
+              </div>
+              <div class="pill">
+                <span class="pill-icon">📄</span
+                ><span class="pill-text"
+                  >Corporate Documentation &amp; Governance</span
+                >
+              </div>
+              <div class="pill">
+                <span class="pill-icon">🏷️</span
+                ><span class="pill-text"
+                  >Unified Corporate Branding Systems</span
+                >
+              </div>
+              <div class="pill">
+                <span class="pill-icon">📢</span
+                ><span class="pill-text"
+                  >Strategic Communications Strategy</span
+                >
+              </div>
+              <div class="pill">
+                <span class="pill-icon">🎤</span
+                ><span class="pill-text">End-to-End Event Management</span>
+              </div>
+              <div class="pill">
+                <span class="pill-icon">🤝</span
+                ><span class="pill-text">High-Impact Employee Engagement</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLS BAND -->
+    <div class="tools-band">
+      <div class="tools-inner">
+        <p class="tools-heading">Core Technical Stack &amp; Asset Tooling</p>
+        <div class="tools-row">
+          <div class="tool-tag">Microsoft 365 Enterprise</div>
+          <div class="tool-tag">Google Workspace Ecosystem</div>
+          <div class="tool-tag">Canva Premium Architect</div>
+          <div class="tool-tag">Google Sites Portal Design</div>
+          <div class="tool-tag">Inkscape Vector Studio</div>
+          <div class="tool-tag">Zoho Show Automation</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JOURNEY -->
+    <section id="journey">
+      <div class="wrap">
+        <div class="s-header reveal">
+          <div class="s-eyebrow">Professional Milestone Ledger</div>
+          <h2 class="s-title">
+            Key accomplishments that<br /><em>defined</em> my standard
+          </h2>
+        </div>
+        <div class="journey-layout reveal">
+          <div class="journey-years" id="yearTabs">
+            <button class="year-btn active" data-panel="p1">
+              2024 · Onboarding
+            </button>
+            <button class="year-btn" data-panel="p2">
+              2024 · Star Performer
+            </button>
+            <button class="year-btn" data-panel="p3">
+              2024 · Digital Summit
+            </button>
+            <button class="year-btn" data-panel="p4">
+              2025 · 30Y Celebration
+            </button>
+            <button class="year-btn" data-panel="p5">
+              2025 · Standardization
+            </button>
+            <button class="year-btn" data-panel="p6">Present Horizon</button>
+          </div>
+          <div class="journey-content">
+            <div class="journey-panel active" id="p1">
+              <div class="jp-year">2024 · Chapter Initialization</div>
+              <div class="jp-title">Inducted into Miracle Software Systems</div>
+              <div class="jp-desc">
+                Assumed accountability as a Branding &amp; Communication
+                Executive. Orchestrated immediate foundational efforts for
+                corporate template infrastructure, external slide positioning,
+                and vital internal alignment pathways.
+              </div>
+            </div>
+            <div class="journey-panel" id="p2">
+              <div class="jp-year">2024 · Peak Recognition</div>
+              <div class="jp-title">Conferred Star Performer Distinction</div>
+              <div class="jp-desc">
+                Formally awarded the Star Performer title for demonstrative
+                excellence, creativity, and speed in delivering core strategic
+                communication and identity initiatives under high-stakes
+                conditions.
+              </div>
+              <div class="jp-badge">★ Star Performer Award Winner</div>
+            </div>
+            <div class="journey-panel" id="p3">
+              <div class="jp-year">2024 · Massive Scale Execution</div>
+              <div class="jp-title">Digital Summit Strategy Support</div>
+              <div class="jp-desc">
+                Headed visual design architecture, platform collateral curation,
+                and cross-channel sync operations for critical enterprise
+                digital summits, ensuring absolute corporate alignment.
+              </div>
+            </div>
+            <div class="journey-panel" id="p4">
+              <div class="jp-year">2025 · Historic Milestones</div>
+              <div class="jp-title">30-Year Corporate Anniversary Campaign</div>
+              <div class="jp-desc">
+                Directed end-to-end design positioning, event comms, and digital
+                alignment strategies celebrating three decades of innovation for
+                Miracle Software Systems across the corporate ecosystem.
+              </div>
+            </div>
+            <div class="journey-panel" id="p5">
+              <div class="jp-year">2025 · System Optimization</div>
+              <div class="jp-title">
+                Global Presentation Standards Deployment
+              </div>
+              <div class="jp-desc">
+                Spearheaded systemic restructuring of asset templates across
+                teams. Enforced unified asset guidelines, streamlined visual
+                delivery, and established an institutional benchmark for
+                external collateral.
+              </div>
+            </div>
+            <div class="journey-panel" id="p6">
+              <div class="jp-year">2026 – Present</div>
+              <div class="jp-title">Sustained Brand Direction</div>
+              <div class="jp-desc">
+                Continuously piloting organizational identity development,
+                strategic change communications, and internal activation
+                programs built to fortify team culture and accelerate brand
+                value.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCIES -->
+    <section id="skills">
+      <div class="wrap">
+        <div class="s-header reveal">
+          <div class="s-eyebrow">Core Core Capabilities</div>
+          <h2 class="s-title">Strategic value <em>delivery</em></h2>
+        </div>
+        <div class="comp-grid">
+          <div class="comp-card reveal">
+            <div class="comp-num">01 / Presentation Design</div>
+            <div class="comp-name">High-Stakes Visual Alignment</div>
+            <div class="comp-desc">
+              Formulating precise, beautifully balanced corporate presentations
+              that anchor target messages, drive narrative focus, and win
+              critical accounts.
+            </div>
+          </div>
+          <div class="comp-card reveal">
+            <div class="comp-num">02 / Documentation</div>
+            <div class="comp-name">Asset Governance</div>
+            <div class="comp-desc">
+              Assembling, codifying, and maintaining standard operating
+              corporate documentation that guarantees uniform presentation
+              quality across multi-tiered channels.
+            </div>
+          </div>
+          <div class="comp-card reveal">
+            <div class="comp-num">03 / Corporate Branding</div>
+            <div class="comp-name">Identity Synchronization</div>
+            <div class="comp-desc">
+              Guiding cohesive organizational expressions by designing
+              comprehensive aesthetic rulesets and premium print/digital vectors
+              that reflect systemic values.
+            </div>
+          </div>
+          <div class="comp-card reveal">
+            <div class="comp-num">04 / Corporate Communication</div>
+            <div class="comp-name">High-Impact Dissemination</div>
+            <div class="comp-desc">
+              Configuring internal and matrixed team narrative architectures
+              that simplify updates, foster workforce alignment, and inspire
+              action at scale.
+            </div>
+          </div>
+          <div class="comp-card reveal">
+            <div class="comp-num">05 / Event Management</div>
+            <div class="comp-name">Precision Event Execution</div>
+            <div class="comp-desc">
+              Overseeing complete event life cycles from concept matrices to
+              live broadcast staging, ensuring fluid operations and flawless
+              reception.
+            </div>
+          </div>
+          <div class="comp-card reveal">
+            <div class="comp-num">06 / Employee Engagement</div>
+            <div class="comp-name">Organizational Ecosystem Dynamics</div>
+            <div class="comp-desc">
+              Creating targeted workforce campaigns that enrich operational
+              alignment, boost productivity thresholds, and build premium
+              corporate communities.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOGNITION -->
+    <div class="wrap-narrow">
+      <div class="reco-card reveal">
+        <div class="reco-glow"></div>
+        <span class="reco-star">★</span>
+        <div class="reco-title">Star <em>Performer</em> Distinction</div>
+        <div class="reco-from">Miracle Software Systems · Annual Award</div>
+        <p class="reco-desc">
+          Formally certified for outstanding contributions to corporate brand
+          acceleration and creative messaging strategy — highlighting dedication
+          to delivering enterprise-grade work consistently.
+        </p>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="s-header reveal">
+          <div class="s-eyebrow">Enterprise Channel Interlock</div>
+          <h2 class="s-title">
+            Initiate a collaboration<br />vector <em>today</em>
+          </h2>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-left reveal">
+            <p class="contact-tagline">
+              Whether organizing high-fidelity presentation standard programs,
+              deploying specialized communication infrastructure, or
+              investigating brand design systems — let's connect.
+            </p>
+            <p class="contact-tagline" style="margin-bottom: 0">
+              Reach out through any verified channel to accelerate your project
+              pipeline.
+            </p>
+          </div>
+          <div class="contact-items reveal">
+            <div class="contact-row">
+              <div class="contact-ico">🏢</div>
+              <div>
+                <div class="contact-lbl">Current Matrix</div>
+                <div class="contact-val">Miracle Software Systems</div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-ico">💼</div>
+              <div>
+                <div class="contact-lbl">Domain Accountability</div>
+                <div class="contact-val">
+                  Branding &amp; Communication Executive
+                </div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-ico">⏳</div>
+              <div>
+                <div class="contact-lbl">Total Experience Lifecycle</div>
+                <div class="contact-val">2+ Years Enterprise Scope</div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-ico">🛰️</div>
+              <div>
+                <div class="contact-lbl">Core Competency Focus</div>
+                <div class="contact-val">
+                  Branding · Presenting · Summits · Alignment
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span class="footer-name">DURGAPRASAD_NANDIKA</span>
+      <span class="footer-copy"
+        >© 2026 · Corporate Branding &amp; Strategy Portfolio</span
+      >
+    </footer>
+
+    <script>
+      // Tab Switching System
+      document
+        .getElementById("yearTabs")
+        .addEventListener("click", function (e) {
+          const btn = e.target.closest(".year-btn");
+          if (!btn) return;
+          document
+            .querySelectorAll(".year-btn")
+            .forEach((b) => b.classList.remove("active"));
+          document
+            .querySelectorAll(".journey-panel")
+            .forEach((p) => p.classList.remove("active"));
+          btn.classList.add("active");
+          document.getElementById(btn.dataset.panel).classList.add("active");
+        });
+
+      // Scroll Animation Reveal Engine
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("vis");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.05 }
+      );
+      document.querySelectorAll(".reveal").forEach((r) => io.observe(r));
+    </script>
+  </body>
+</html>
